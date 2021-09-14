@@ -1,24 +1,9 @@
 package com.examples;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Problem037 {
-
-	public static void main(String[] args) {
-		Problem037 test = new Problem037();
-		System.out.println(Arrays.asList(test.generateSet(0)) + " -> " + test.generatePowerSet(test.generateSet(0)));
-		System.out.println(Arrays.asList(test.generateSet(1)) + " -> " + test.generatePowerSet(test.generateSet(1)));
-		System.out.println(Arrays.asList(test.generateSet(2)) + " -> " + test.generatePowerSet(test.generateSet(2)));
-		System.out.println(Arrays.asList(test.generateSet(3)) + " -> " + test.generatePowerSet(test.generateSet(3)));
-		System.out.println(Arrays.asList(test.generateSet(4)) + " -> " + test.generatePowerSet(test.generateSet(4)));
-		System.out.println(test.generateList(0) + " -> " + test.generatePowerSet(test.generateList(0)));
-		System.out.println(test.generateList(1) + " -> " + test.generatePowerSet(test.generateList(1)));
-		System.out.println(test.generateList(2) + " -> " + test.generatePowerSet(test.generateList(2)));
-		System.out.println(test.generateList(3) + " -> " + test.generatePowerSet(test.generateList(3)));
-		System.out.println(test.generateList(4) + " -> " + test.generatePowerSet(test.generateList(4)));
-	}
 
 	List<List<Integer>> generatePowerSet(Integer[] set) {
 		return generatePowerSet(set, set.length);
@@ -58,20 +43,6 @@ public class Problem037 {
 			out.sort((item1, item2) -> item1.size() - item2.size());
 		}
 		return out;
-	}
-
-	Integer[] generateSet(int setSize) {
-		List<Integer> result = new ArrayList<Integer>(0);
-		for (int counter = 1; counter <= setSize; counter++)
-			result.add(counter);
-		return result.toArray(new Integer[result.size()]);
-	}
-
-	List<Integer> generateList(int setSize) {
-		List<Integer> result = new ArrayList<Integer>(0);
-		for (int counter = 1; counter <= setSize; counter++)
-			result.add(counter);
-		return result;
 	}
 
 }
